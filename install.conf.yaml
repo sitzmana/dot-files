@@ -1,0 +1,38 @@
+# install.conf.yaml
+- clean:
+    # remove dangling symlinks before linking
+    - ~/.zshrc
+    - ~/.bashrc
+    - ~/.vimrc
+    - ~/.config/nvim/init.vim
+    - ~/.config/starship.toml
+    - ~/.gitconfig
+    - ~/.gitignore_global
+    - ~/.gitmessage.txt
+
+- link:
+    # shell configs
+    zsh/.zshrc:             ~/.zshrc
+    bash/.bashrc:           ~/.bashrc
+
+    # Vim & Neovim
+    vim/.vimrc:             ~/.vimrc
+    nvim/init.vim:          ~/.config/nvim/init.vim
+
+    # starship prompt
+    starship/starship.toml: ~/.config/starship.toml
+
+    # git
+    git/.gitconfig:         ~/.gitconfig
+    git/.gitignore_global:  ~/.gitignore_global
+    git/.gitmessage.txt:    ~/.gitmessage.txt
+
+- shell:
+    # any extra install-time commands
+    - [ bash, -c, "mkdir -p ~/.nvm ~/.vim/autoload ~/.local/share/nvim/site/autoload" ]
+    - [ bash, -c, "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" ]
+    - [ bash, -c, "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" ]
+
+- clean:
+    # optionally clean up any temp files Dotbot created
+    - ~/.vim/autoload/plug.vim.old
