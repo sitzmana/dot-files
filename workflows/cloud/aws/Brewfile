@@ -1,0 +1,3 @@
+# AWS CLI & vault
+brew "awscli"
+brew "aws-vault"

@@ -1,0 +1,5 @@
+# Azure CLI
+brew "azure-cli"
+
+# (Optional) Azure Dev CLI
+brew "azure-dev"

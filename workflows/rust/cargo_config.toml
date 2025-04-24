@@ -1,0 +1,17 @@
+# ~/.cargo/config.toml
+
+[build]
+# use all available cores
+jobs = 0
+
+[net]
+# retry downloads a few times
+retry = 2
+
+[term]
+# colored output
+verbose = true
+
+[registry]
+# example: replace crates.io with a mirror
+# default = "https://my-crates-mirror.example.com"

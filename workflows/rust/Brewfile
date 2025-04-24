@@ -1,0 +1,18 @@
+# Rust toolchain & utilities
+
+# Rust version manager
+brew "rustup-init"
+
+# Useful Cargo subcommands
+brew "cargo-edit"      # add, remove, upgrade dependencies
+brew "cargo-outdated"  # check for outdated dependencies
+brew "cargo-watch"     # watch for file changes and run commands
+
+# CLI utilities
+brew "ripgrep"         # grep replacement
+brew "exa"             # modern ls
+brew "fd"              # find replacement
+brew "bat"             # cat replacement
+
+# Optional extras
+brew "llvm"            # if you need Clang/LLD  

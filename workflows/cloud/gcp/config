@@ -1,0 +1,7 @@
+[core]
+project = YOUR_PROJECT_ID
+account = YOUR_ACCOUNT_EMAIL
+
+[compute]
+region = us-central1
+zone = us-central1-a

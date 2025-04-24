@@ -1,0 +1,17 @@
+# taps
+tap "homebrew/core"
+tap "homebrew/cask"
+
+# Python & version managers
+brew "python@3.11"
+brew "pyenv"
+brew "pyenv-virtualenv"
+
+# Environment & packaging tools
+brew "pipenv"
+brew "pipx"
+
+# Optional utilities
+brew "watchman"      # file‐watching
+brew "openssl@1.1"   # for cryptography builds
+brew "postgresql"    # local Postgres if you need it

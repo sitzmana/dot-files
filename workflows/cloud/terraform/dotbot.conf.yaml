@@ -1,0 +1,8 @@
+# Terraform workflow Dotbot config
+
+- shell:
+    # Bootstrap Terraform CLI, tfenv, and autocomplete
+    - [ bash, -lc, "$DOTFILES/workflows/cloud/terraform/install.sh" ]
+
+- link:
+    workflows/cloud/terraform/.terraformrc: ~/.terraformrc

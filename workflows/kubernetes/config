@@ -1,0 +1,8 @@
+# ~/.kube/config
+apiVersion: v1
+kind: Config
+preferences: {}
+clusters: []
+users: []
+contexts: []
+current-context: ""

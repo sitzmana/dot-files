@@ -1,0 +1,7 @@
+# .NET SDK
+tap "homebrew/core"
+brew "dotnet-sdk"
+
+# NuGet & editor support
+brew "nuget"
+brew "omnisharp"

@@ -1,0 +1,18 @@
+# C/C++ toolchain & utilities
+
+# Build systems
+brew "cmake"
+brew "ninja"
+
+# Compilers
+brew "gcc"          # GNU Compiler Collection
+brew "llvm"         # Clang, clang-format, clang-tidy
+
+# Developer tools
+brew "make"         # GNU Make
+brew "ccache"       # Compiler cache
+brew "gdb"          # Debugger
+brew "cppcheck"     # Static analysis
+
+# Optional: code quality
+# brew "clang-tidy"  # included in llvm

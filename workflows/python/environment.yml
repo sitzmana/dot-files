@@ -1,0 +1,24 @@
+name: python-dev
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.11
+  - ipython
+  - pip
+  - pipx
+  - pipenv
+  - watchman
+  - openssl@1.1
+  - postgresql
+  - pip:
+    - black
+    - isort
+    - flake8
+    - mypy
+    - pytest
+    - pytest-cov
+    - requests
+    - ipdb
+    - pre-commit

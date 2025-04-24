@@ -1,0 +1,6 @@
+# ~/.clang-format: use Google style with custom tweaks
+BasedOnStyle: Google
+IndentWidth: 4
+ColumnLimit: 100
+AllowShortFunctionsOnASingleLine: Empty
+ReflowComments: true

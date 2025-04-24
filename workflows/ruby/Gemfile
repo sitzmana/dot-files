@@ -1,0 +1,9 @@
+source "https://rubygems.org"
+
+# Core tools
+gem "bundler"
+gem "rake"
+
+gem "rails", "~> 7.0"       # adjust to desired Rails version
+gem "rubocop", require: false
+gem "bundler-audit", require: false

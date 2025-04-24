@@ -1,0 +1,9 @@
+# Kubernetes workflow Dotbot config
+
+- shell:
+    # Bootstrap Kubernetes CLI tools
+    - [ bash, -lc, "$DOTFILES/workflows/kubernetes/install.sh" ]
+
+- link:
+    # Link a base kubeconfig (edit with your clusters)
+    workflows/kubernetes/config: ~/.kube/config

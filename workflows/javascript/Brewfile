@@ -1,0 +1,7 @@
+# Node.js & package managers
+tap "homebrew/core"
+brew "node"      # includes npm
+brew "yarn"
+
+# Optional CLI tools
+brew "volta"     # version manager (alternative to nvm)

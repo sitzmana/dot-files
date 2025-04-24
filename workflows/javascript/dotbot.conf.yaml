@@ -1,0 +1,11 @@
+# JavaScript workflow Dotbot config
+
+- shell:
+    # Bootstrap Node.js, Yarn & global packages
+    - [ bash, -lc, "$DOTFILES/workflows/javascript/install.sh" ]
+
+- link:
+    # Lint & format config
+    workflows/javascript/.eslintrc.js:    ~/.eslintrc.js
+    workflows/javascript/.prettierrc:     ~/.prettierrc
+    workflows/javascript/.editorconfig:  ~/.editorconfig

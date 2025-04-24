@@ -1,0 +1,16 @@
+# ~/.golangci.yml: golangci-lint configuration
+run:
+  timeout: 5m
+linters:
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - ineffassign
+    - gosimple
+    - unused
+    - deadcode
+    - gofmt
+    - goimports
+issues:
+  exclude-use-default: false

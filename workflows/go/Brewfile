@@ -1,0 +1,8 @@
+# Go language
+brew "go"
+
+# Linting & static analysis
+brew "golangci-lint"
+
+# Debugging
+brew "delve"

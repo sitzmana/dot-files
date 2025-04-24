@@ -1,0 +1,17 @@
+# workflows/python/dotbot.conf.yaml
+
+- shell:
+    # Install Homebrew packages for Python dev
+    - [ bash, -lc, "brew bundle --file=$DOTFILES/workflows/python/Brewfile" ]
+
+    # Create & activate Conda env (skip if you prefer pipenv/pyenv)
+    - [ bash, -lc, "conda env create -f $DOTFILES/workflows/python/environment.yml || conda env update -f $DOTFILES/workflows/python/environment.yml" ]
+
+    # Install any remaining PyPI tools globally
+    - [ bash, -lc, "pip3 install -r $DOTFILES/workflows/python/requirements.txt" ]
+
+- link:
+    # Symlink your pylintrc and helper files into $HOME
+    workflows/python/pylintrc:        ~/.pylintrc
+    workflows/python/requirements.txt: ~/.requirements.txt
+    workflows/python/environment.yml: ~/.environment.yml

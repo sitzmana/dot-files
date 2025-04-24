@@ -1,0 +1,32 @@
+[MASTER]
+ignore=venv
+jobs=1
+
+[MESSAGES CONTROL]
+# disable docstring warnings for quick iteration
+disable=
+    C0114,  # missing-module-docstring
+    C0115,  # missing-class-docstring
+    C0116   # missing-function-docstring
+
+[FORMAT]
+# match Black’s defaults
+max-line-length=88
+indent-string='    '
+
+[REPORTS]
+# turn off the final score report
+reports=no
+
+[TYPECHECK]
+# allow import of installed packages without stub files
+ignore-missing-imports=yes
+
+[DESIGN]
+# increase max args/locals if you have many
+max-args=10
+max-locals=25
+
+[VARIABLES]
+# allow common short names
+good-names=i,j,k,_,pk

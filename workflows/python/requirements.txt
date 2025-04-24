@@ -1,0 +1,19 @@
+# Formatting & linting
+black
+isort
+flake8
+mypy
+
+# Testing
+pytest
+pytest-cov
+
+# REPL & utilities
+ipython
+ipdb
+
+# HTTP & data
+requests
+
+# Git hooks
+pre-commit

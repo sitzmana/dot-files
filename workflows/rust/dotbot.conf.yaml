@@ -1,0 +1,12 @@
+# Rust workflow Dotbot config
+
+- shell:
+    # Run the install script to set up toolchain & tools
+    - [ bash, -lc, "$DOTFILES/workflows/rust/install.sh" ]
+
+- link:
+    # Cargo config for registries, settings, etc.
+    workflows/rust/cargo_config.toml: ~/.cargo/config.toml
+
+    # rustfmt defaults
+    workflows/rust/rustfmt.toml:      ~/.rustfmt.toml

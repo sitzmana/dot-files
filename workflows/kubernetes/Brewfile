@@ -1,0 +1,8 @@
+# Core Kubernetes CLIs
+brew "kubectl"
+brew "helm"
+brew "kustomize"
+brew "skaffold"
+brew "k9s"
+brew "kubectx"
+brew "stern"

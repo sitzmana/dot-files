@@ -1,0 +1,8 @@
+# Azure workflow Dotbot config
+
+- shell:
+    # Bootstrap Azure CLI
+    - [ bash, -lc, "$DOTFILES/workflows/cloud/azure/install.sh" ]
+
+- link:
+    workflows/cloud/azure/config: ~/.azure/config

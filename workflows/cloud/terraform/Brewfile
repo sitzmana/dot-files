@@ -1,0 +1,8 @@
+# Terraform & version manager
+tap "hashicorp/tap"
+brew "hashicorp/tap/terraform"
+brew "tfenv"
+
+# Optional: switch between versions
+tap "warrensbox/tap"
+brew "tfswitch"

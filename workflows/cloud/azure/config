@@ -1,0 +1,8 @@
+[cloud]
+name = AzureCloud
+
+[defaults]
+# Default resource group and location
+group = YOUR_RESOURCE_GROUP
+location = eastus
+subscription = YOUR_SUBSCRIPTION_ID

@@ -1,0 +1,10 @@
+# .NET / C# workflow Dotbot config
+
+- shell:
+    # Bootstrap .NET SDK, global tools
+    - [ bash, -lc, "$DOTFILES/workflows/dotnet/install.sh" ]
+
+- link:
+    # NuGet & global tools manifest
+    workflows/dotnet/NuGet.Config: ~/.nuget/NuGet.Config
+    workflows/dotnet/tools.json:    ~/.config/dotnet/tools.json

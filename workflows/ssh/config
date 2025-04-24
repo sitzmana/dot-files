@@ -1,0 +1,12 @@
+# ~/.ssh/config sample
+Host *
+  AddKeysToAgent yes
+  # UseKeychain yes          # macOS only\   # omit on Linux
+  IdentityFile ~/.ssh/id_rsa
+  ServerAliveInterval 60
+  ServerAliveCountMax 5
+
+# Example alias
+# Host myserver
+#   HostName 192.0.2.10
+#   User <Name>

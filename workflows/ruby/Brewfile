@@ -1,0 +1,11 @@
+# Ruby version manager
+brew "rbenv"
+brew "ruby-build"
+
+# OpenSSL & YAML for building gems
+brew "openssl@1.1"
+brew "libyaml"
+
+# Optional utilities
+tap "homebrew/cask"
+brew "postgresql"   # local DB for Rails or other apps

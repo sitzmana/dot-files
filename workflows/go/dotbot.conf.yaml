@@ -1,0 +1,10 @@
+# Go workflow Dotbot config
+
+- shell:
+    # Bootstrap Go environment
+    - [ bash, -lc, "$DOTFILES/workflows/go/install.sh" ]
+
+- link:
+    # Link Go environment file and linter config
+    workflows/go/goenv:         ~/.goenv
+    workflows/go/.golangci.yml: ~/.golangci.yml
