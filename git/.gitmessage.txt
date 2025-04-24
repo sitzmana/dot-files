@@ -1,0 +1,13 @@
+# ------------------------ SUBJECT (50 chars max) ------------------------
+#
+# Brief, imperative summary (no trailing period)
+#
+# ----------------------------- BODY (wrap 72) --------------------------
+#
+# - Why this change?
+# - Any side-effects or important notes?
+#
+# ---------------------------- FOOTER (optional) -------------------------
+#
+# Closes: #<issue-number>
+# Reviewed-by: @your-reviewer

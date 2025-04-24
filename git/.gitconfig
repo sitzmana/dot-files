@@ -1,0 +1,44 @@
+
+[core]
+    editor = nvim
+    autocrlf = input                    ; `true` on Windows, `input` on macOS/Linux
+    excludesfile = ~/.gitignore_global
+    pager = delta                       ; use `git-delta` for nicer diffs
+
+[color]
+    ui = auto
+
+[commit]
+    template = ~/.gitmessage.txt
+
+[diff]
+    tool = delta
+
+[difftool "delta"]
+    cmd = delta --color-only
+
+[merge]
+    tool = vimdiff
+
+[credential]
+    helper = osxkeychain                ; on macOS; use `manager-core` on Windows
+
+[push]
+    default = simple
+
+[alias]
+    st       = status
+    ci       = commit
+    co       = checkout
+    br       = branch
+    lg       = log --graph --decorate --pretty=format:'%C(bold blue)%h%Creset %C(green)%ad%Creset %C(auto)%d%Creset %s' --date=short --all
+    amend    = commit --amend --no-edit
+    unstage  = reset HEAD --
+    last     = log -1 HEAD
+    visualize= log --graph --oneline --decorate --all
+    wip      = commit -m "WIP"
+    review   = difftool --dir-diff
+    undo     = reset --soft HEAD~1
+
+[includeIf "gitdir:~/work/"]
+    path = ~/.gitconfig-work
