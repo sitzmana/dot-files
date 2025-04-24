@@ -42,3 +42,6 @@
 
 [includeIf "gitdir:~/work/"]
     path = ~/.gitconfig-work
+[user]
+	name = sitzmana
+	email = alex@sitzman.net

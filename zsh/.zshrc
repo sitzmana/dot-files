@@ -3,14 +3,17 @@ plugins=(
         zsh-autosuggestions
         web-search
         sudo
-        conda
-        docker
         copybuffer
         copyfile
         macos
 )
            
-source $ZSH/oh-my-zsh.sh   
+source .oh-my-zsh/oh-my-zsh.sh   
+# Initialize Starship prompt
+if command -v starship &>/dev/null; then
+  eval "$(starship init zsh)"
+fi
+
 source <(fzf --zsh)
 
 jc() { curl -s "$@" | jq .; }
@@ -34,6 +37,5 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /Users/alexsitzman/.config/broot/launcher/bash/brsource $HOME/.goenv
 source $HOME/.goenv
 source $HOME/.cargo/env
