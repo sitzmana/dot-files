@@ -83,6 +83,37 @@ This repository contains a collection of **dotfiles** and installation scripts t
 
 ## Customization
 
+## Optional Workflows
+
+This repository provides additional _optional_ workflows in the `workflows/` directory. Each workflow includes a manifest (e.g., Brewfile or package list), an `install.sh` installer script, and a `dotbot.conf.yaml` for symlinks and setup.
+
+Examples of available workflows include:
+- Python (`workflows/python/dotbot.conf.yaml`)
+- Rust (`workflows/rust/dotbot.conf.yaml`)
+- Ruby (`workflows/ruby/dotbot.conf.yaml`)
+- Go (`workflows/go/dotbot.conf.yaml`)
+- C/C++ (`workflows/cc/dotbot.conf.yaml`)
+- JavaScript (`workflows/javascript/dotbot.conf.yaml`)
+- .NET/C# (`workflows/dotnet/dotbot.conf.yaml`)
+- Kubernetes (`workflows/kubernetes/dotbot.conf.yaml`)
+- AWS (`workflows/cloud/aws/dotbot.conf.yaml`)
+- Azure (`workflows/cloud/azure/dotbot.conf.yaml`)
+- GCP (`workflows/cloud/gcp/dotbot.conf.yaml`)
+- Terraform (`workflows/cloud/terraform/dotbot.conf.yaml`)
+- SSH (`workflows/ssh/dotbot.conf.yaml`)
+- GPG (`workflows/gpg/dotbot.conf.yaml`)
+
+To enable a workflow, add its path under the `- include:` section of your top-level `install.conf.yaml`. For example:
+
+```yaml
+- include:
+    workflows/python/dotbot.conf.yaml
+    workflows/rust/dotbot.conf.yaml
+    workflows/cloud/aws/dotbot.conf.yaml
+```
+
+Comment out or remove entries to disable specific workflows.
+
 - **Modify** any file under its folder (e.g. `zsh/.zshrc`, `nvim/init.vim`).
 - **Re-run** `./install.sh` to update symlinks and re-apply setup commands.
 - **Add** new config files by updating `install.conf.yaml` and placing your dotfile in the repo.
