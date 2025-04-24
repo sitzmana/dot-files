@@ -1,8 +1,16 @@
 # Azure workflow Dotbot config
+- defaults:
+    link:
+      ignore-missing: true
+      relink: true
+      create: true
+      force: true
+    shell:
+      stdout: true
 
 - shell:
     # Bootstrap Azure CLI
-    - [ bash, -lc, "$DOTFILES/workflows/cloud/azure/install.sh" ]
+    - [ "./workflows/cloud/azure/install.sh", "bash -lc" ]
 
 - link:
-    workflows/cloud/azure/config: ~/.azure/config
+    ~/.azure/config: workflows/cloud/azure/config

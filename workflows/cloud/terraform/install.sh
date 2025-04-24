@@ -5,7 +5,7 @@ set -e
 if command -v brew &>/dev/null; then
   echo "Installing Terraform and tfenv via Homebrew…"
   brew update
-  brew bundle --file="$DOTFILES/workflows/cloud/terraform/Brewfile"
+  brew bundle --file="./workflows/cloud/terraform/Brewfile"
 
 elif command -v apt &>/dev/null; then
   echo "Adding HashiCorp apt repository…"

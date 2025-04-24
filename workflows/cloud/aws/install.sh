@@ -5,7 +5,7 @@ set -e
 if command -v brew &>/dev/null; then
   echo "Installing AWS CLI and aws-vault via Homebrew…"
   brew update
-  brew bundle --file="$DOTFILES/workflows/cloud/aws/Brewfile"
+  brew bundle --file="./workflows/cloud/aws/Brewfile"
 elif command -v apt &>/dev/null; then
   echo "Installing AWS CLI via apt…"
   sudo apt update

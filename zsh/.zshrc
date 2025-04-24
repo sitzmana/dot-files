@@ -34,4 +34,6 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source /Users/alexsitzman/.config/broot/launcher/bash/br
+source /Users/alexsitzman/.config/broot/launcher/bash/brsource $HOME/.goenv
+source $HOME/.goenv
+source $HOME/.cargo/env

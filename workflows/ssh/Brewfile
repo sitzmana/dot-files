@@ -1,6 +1,4 @@
 # SSH & related tools
-tap "homebrew/core"
 brew "openssh"       # SSH client & server
-tap "homebrew/cask"
 brew "ssh-copy-id"   # convenience for macOS (optional)
 brew "keychain"      # ssh-agent wrapper (optional)

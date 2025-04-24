@@ -5,7 +5,7 @@ set -e
 if command -v brew &>/dev/null; then
   echo "Installing Azure CLI via Homebrew…"
   brew update
-  brew bundle --file="$DOTFILES/workflows/cloud/azure/Brewfile"
+  brew bundle --file="./workflows/cloud/azure/Brewfile"
 elif command -v apt &>/dev/null; then
   echo "Installing Azure CLI via Microsoft apt repository…"
   # import Microsoft signing key and repository

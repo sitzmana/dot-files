@@ -5,7 +5,7 @@ set -e
 type brew &>/dev/null && {
   echo "Installing Google Cloud SDK via Homebrew…"
   brew update
-  brew bundle --file="$DOTFILES/workflows/cloud/gcp/Brewfile"
+  brew bundle --file="./workflows/cloud/gcp/Brewfile"
   exit 0
 }
 

@@ -5,7 +5,7 @@ set -e
 if command -v brew &>/dev/null; then
   echo "Installing GPG & Pinentry via Homebrew…"
   brew update
-  brew bundle --file="$DOTFILES/workflows/gpg/Brewfile"
+  brew bundle --file="./workflows/gpg/Brewfile"
 
 # Linux (apt)
 elif command -v apt &>/dev/null; then

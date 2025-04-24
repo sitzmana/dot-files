@@ -1,10 +1,18 @@
 # GCP workflow Dotbot config
+- defaults:
+    link:
+      ignore-missing: true
+      relink: true
+      create: true
+      force: true
+    shell:
+      stdout: true
 
 - shell:
     # Create config directory and install SDK
-    - [ bash, -lc, "mkdir -p ~/.config/gcloud/configurations" ]
-    - [ bash, -lc, "$DOTFILES/workflows/cloud/gcp/install.sh" ]
+    - [ "mkdir -p ~/.config/gcloud/configurations", "bash -lc" ]
+    - [ "./workflows/cloud/gcp/install.sh", "bash -lc" ]
 
 - link:
     # Link default GCP configuration
-    workflows/cloud/gcp/config: ~/.config/gcloud/configurations/config_default
+    ~/.config/gcloud/configurations/config_default: workflows/cloud/gcp/config

@@ -8,7 +8,7 @@ DOTFILES=${DOTFILES:-"$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"}
 if command -v brew &>/dev/null; then
   echo "Installing Node.js & Yarn via Homebrew…"
   brew update
-  brew bundle --file="$DOTFILES/workflows/javascript/Brewfile"
+  brew bundle --file="./workflows/javascript/Brewfile"
 elif command -v apt &>/dev/null; then
   echo "Installing Node.js & Yarn via apt…"
   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -

@@ -1,9 +1,17 @@
 # AWS workflow Dotbot config
+- defaults:
+    link:
+      ignore-missing: true
+      relink: true
+      create: true
+      force: true
+    shell:
+      stdout: true
 
 - shell:
     # Install AWS CLI and aws-vault
-    - [ bash, -lc, "$DOTFILES/workflows/cloud/aws/install.sh" ]
+    - [ "./workflows/cloud/aws/install.sh", "bash -lc" ]
 
 - link:
-    workflows/cloud/aws/config:      ~/.aws/config
-    workflows/cloud/aws/credentials: ~/.aws/credentials
+    ~/.aws/config: workflows/cloud/aws/config
+    ~/.aws/credentials: workflows/cloud/aws/credentials

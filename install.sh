@@ -28,17 +28,12 @@ case "$OS" in
       zoxide \
       broot \
       nvm \
-      docker \
-      docker-compose
 
     # 3) GUI apps
-    echo "  ↪ Install Docker Desktop & Miniconda…"
-    brew install --cask docker
-    brew install --cask miniconda
+
 
     # 4) Nerd Font
     echo "  ↪ Installing Hack Nerd Font…"
-    brew tap homebrew/cask-fonts
     brew install --cask font-hack-nerd-font
 
     # 5) fzf keybindings & completions
@@ -135,10 +130,61 @@ case "$OS" in
     ;;
 esac
 
-# ——— invoke Dotbot to symlink all your dotfiles ———
-echo "🔗 Running Dotbot…"
-"$HERE/.dotbot/bin/dotbot" \
-  -c "$HERE/install.conf.yaml" \
-  --skip-conditions
+# ——— invoke Dotbot to symlink all your dotfiles ——— LEGACY
+#echo "🔗 Running Dotbot…"
+#"$HERE/.dotbot/bin/dotbot" \
+#  -c "$HERE/install.conf.yaml" \
+#  --skip-conditions
+#
+#echo "✅ All done!"
+
+# ————— Interactive profile selection —————
+if ! command -v fzf &>/dev/null; then
+  echo "fzf not installed; skipping interactive profiles"
+  PROFILE_CONFIGS=()
+else
+  PROFILE_CONFIGS=()
+  # let user pick one or more YAMLs from profiles/
+  while IFS= read -r file; do
+    PROFILE_CONFIGS+=("$file")
+  done < <(
+    ls "$HERE"/profiles/*.yaml 2>/dev/null \
+      | fzf --multi --prompt="Select profiles: " --preview="cat {}"
+  )
+  if [ ${#PROFILE_CONFIGS[@]} -eq 0 ]; then
+    echo "No profile selected; defaulting to core only."
+  else
+    echo "Selected profiles:"
+    printf "  • %s\n" "${PROFILE_CONFIGS[@]##*/}"
+  fi
+fi
+
+# ————— Build workflow list from selected profiles —————
+WORKFLOWS=()
+for profile in "${PROFILE_CONFIGS[@]}"; do
+  # Extract lines under 'workflows:' key and strip leading spaces and hyphens
+  while IFS= read -r wf_line; do
+    # Remove leading whitespace, hyphen, and following spaces
+    wf_path=$(printf "%s" "$wf_line" | sed -E 's/^[[:space:]]*-[[:space:]]*//')
+    WORKFLOWS+=("$HERE/$wf_path")
+  done < <(grep -E '^[[:space:]]*-[[:space:]]*workflows/' "$profile")
+done
+
+echo "Workflows to include:"
+printf "  • %s\n" "${WORKFLOWS[@]/#${HERE}\//}"
+
+# ————— Run Dotbot with core + workflow configs —————
+cd "$HERE"
+DOTBOT_ARGS=( -c "install.conf.yaml" )
+for wf in "${WORKFLOWS[@]}"; do
+  DOTBOT_ARGS+=( "$wf" )
+done
+
+# Allow Dotbot to run even if some links fail
+set +e
+"$HERE/.dotbot/bin/dotbot" "${DOTBOT_ARGS[@]}"
+DOTBOT_EXIT=$?
+set -e
+
 
 echo "✅ All done!"

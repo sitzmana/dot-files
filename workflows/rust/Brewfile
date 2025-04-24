@@ -10,7 +10,7 @@ brew "cargo-watch"     # watch for file changes and run commands
 
 # CLI utilities
 brew "ripgrep"         # grep replacement
-brew "exa"             # modern ls
+brew "eza"             # modern ls
 brew "fd"              # find replacement
 brew "bat"             # cat replacement
 

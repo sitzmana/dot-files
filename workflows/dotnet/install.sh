@@ -7,7 +7,7 @@ DOTFILES=${DOTFILES:-"$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"}
 if command -v brew &>/dev/null; then
   echo "Installing .NET SDK & tools via Homebrew…"
   brew update
-  brew bundle --file="$DOTFILES/workflows/dotnet/Brewfile"
+  brew bundle --file="./workflows/dotnet/Brewfile"
 
 # Debian/Ubuntu via Microsoft APT
 elif command -v apt &>/dev/null; then

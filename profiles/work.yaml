@@ -1,0 +1,12 @@
+# profiles/work.yaml
+
+# picks up your k8s, cloud, infra workflows
+- include:
+  - workflows/kubernetes/dotbot.conf.yaml
+  - workflows/cloud/aws/dotbot.conf.yaml
+  - workflows/cloud/terraform/dotbot.conf.yaml
+  - workflows/ssh/dotbot.conf.yaml
+
+# you could also define extensions, e.g. extra key files…
+#link:
+#  profiles/work/ssh_work_key: ~/.ssh/id_rsa_work

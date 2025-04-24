@@ -1,8 +1,16 @@
 # SSH workflow Dotbot config
+- defaults:
+    link:
+      ignore-missing: true
+      relink: true
+      create: true
+      force: true
+    shell:
+      stdout: true
 
 - shell:
     # Bootstrap SSH tools
-    - [ bash, -lc, "$DOTFILES/workflows/ssh/install.sh" ]
+    - [ "./workflows/ssh/install.sh", "bash -lc" ]
 
 - link:
-    workflows/ssh/config: ~/.ssh/config
+    ~/.ssh/config: workflows/ssh/config

@@ -1,10 +1,18 @@
 # Ruby workflow Dotbot config
+- defaults:
+    link:
+      ignore-missing: true
+      relink: true
+      create: true
+      force: true
+    shell:
+      stdout: true
 
 - shell:
     # Run the install script for Ruby environment
-    - [ bash, -lc, "$DOTFILES/workflows/ruby/install.sh" ]
+    - [ "./workflows/ruby/install.sh", "bash -lc" ]
 
 - link:
-    workflows/ruby/.irbrc: ~/.irbrc
-    workflows/ruby/.gemrc: ~/.gemrc
-    workflows/ruby/Gemfile: ~/.Gemfile
+  ~/.irbrc:    workflows/ruby/.irbrc
+  ~/.gemrc:    workflows/ruby/.gemrc
+  ~/.Gemfile: workflows/ruby/Gemfile

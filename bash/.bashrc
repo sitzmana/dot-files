@@ -105,4 +105,6 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 # 15) Final load of ~/.bash_aliases if you want to split more out
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+[ -f ~/.bash_aliases ] && source ~/.bash_aliasessource $HOME/.goenv
+source $HOME/.goenv
+source $HOME/.cargo/env

@@ -1,10 +1,19 @@
 # C/C++ workflow Dotbot config
+- defaults:
+    link:
+      ignore-missing: true
+      relink: true
+      create: true
+      force: true
+    shell:
+      stdout: true
+
 
 - shell:
     # Bootstrap the C/C++ environment
-    - [ bash, -lc, "$DOTFILES/workflows/cc/install.sh" ]
+    - [ "./workflows/cc/install.sh", "bash -lc" ]
 
 - link:
     # Editor and debugger configs
-    workflows/cc/.clang-format: ~/.clang-format
-    workflows/cc/.gdbinit:      ~/.gdbinit
+    ~/.clang-format: workflows/cc/.clang-format
+    ~/.gdbinit: workflows/cc/.gdbinit

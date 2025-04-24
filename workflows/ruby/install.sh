@@ -2,7 +2,7 @@
 set -e
 
 # Install Homebrew packages
-brew bundle --file="$DOTFILES/workflows/ruby/Brewfile"
+brew bundle --file="./workflows/ruby/Brewfile"
 
 # Initialize rbenv
 if ! command -v rbenv &>/dev/null; then

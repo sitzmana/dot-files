@@ -1,25 +1,11 @@
-# install.conf.yaml
-
-# dotfile supports optinal workflows
-- include:
-  #- workflows/python/dotbot.conf.yaml
-  #- workflows/rust/dotbot.conf.yaml
-  #- workflows/ruby/dotbot.conf.yaml
-  #- workflows/go/dotbot.conf.yaml
-  #- workflows/cc/dotbot.conf.yaml
-  #- workflows/javascript/dotbot.conf.yaml
-  #- workflows/kubernetes/dotbot.conf.yaml
-  #- workflows/ssh/dotbot.conf.yaml
-  #- workflows/gpg/dotbot.conf.yaml
-  #- workflows/dotnet/dotbot.conf.yaml
-
-### - IMPORTANT - 
-### Please visit config files in cloud folders before enabling dotbot files
-### Cloud providers will require usage specific information to function
-  #- workflows/cloud/aws/dotbot.conf.yaml
-  #- workflows/cloud/azure/dotbot.conf.yaml
-  #- workflows/cloud/gcp/dotbot.conf.yaml
-  #- workflows/cloud/terraform/dotbot.conf.yaml
+- defaults:
+    link:
+      ignore-missing: true
+      relink: true
+      create: true
+      force: true
+    shell:
+      stdout: true
 
 - clean:
     # remove dangling symlinks before linking
@@ -34,26 +20,26 @@
 
 - link:
     # shell configs
-    zsh/.zshrc:             ~/.zshrc
-    bash/.bashrc:           ~/.bashrc
+    ~/.zshrc:             zsh/.zshrc
+    ~/.bashrc:           bash/.bashrc
 
     # Vim & Neovim
-    vim/.vimrc:             ~/.vimrc
-    nvim/init.vim:          ~/.config/nvim/init.vim
+    ~/.vimrc:             vim/.vimrc
+    ~/.config/nvim/init.vim: nvim/init.vim
 
     # starship prompt
-    starship/starship.toml: ~/.config/starship.toml
+    ~/.config/starship.toml: starship/starship.toml
 
     # git
-    git/.gitconfig:         ~/.gitconfig
-    git/.gitignore_global:  ~/.gitignore_global
-    git/.gitmessage.txt:    ~/.gitmessage.txt
+    ~/.gitconfig:         git/.gitconfig
+    ~/.gitignore_global:  git/.gitignore_global
+    ~/.gitmessage.txt:    git/.gitmessage.txt
 
 - shell:
     # any extra install-time commands
-    - [ bash, -c, "mkdir -p ~/.nvm ~/.vim/autoload ~/.local/share/nvim/site/autoload" ]
-    - [ bash, -c, "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" ]
-    - [ bash, -c, "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" ]
+    - [ "mkdir -p ~/.nvm ~/.vim/autoload ~/.local/share/nvim/site/autoload", "bash -c" ]
+    - [ "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", "bash -c"]
+    - [ "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", "bash -c" ]
 
 - clean:
     # optionally clean up any temp files Dotbot created

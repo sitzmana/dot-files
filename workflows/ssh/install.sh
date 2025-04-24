@@ -5,7 +5,7 @@ set -e
 if command -v brew &>/dev/null; then
   echo "Installing SSH tools via Homebrew…"
   brew update
-  brew bundle --file="$DOTFILES/workflows/ssh/Brewfile"
+  brew bundle --file="./workflows/ssh/Brewfile"
 
 # Linux (apt)
 elif command -v apt &>/dev/null; then

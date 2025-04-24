@@ -6,7 +6,7 @@ echo "Bootstrapping C/C++ environment…"
 # macOS: Homebrew installs
 if command -v brew &>/dev/null; then
   brew update
-  brew bundle --file="$DOTFILES/workflows/cc/Brewfile"
+  brew bundle --file="./workflows/cc/Brewfile"
 
 # Debian/Ubuntu: apt installs
 elif command -v apt &>/dev/null; then

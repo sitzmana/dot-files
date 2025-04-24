@@ -2,7 +2,7 @@
 set -e
 
 # 1) Install Homebrew packages
-brew bundle --file="$DOTFILES/workflows/go/Brewfile"
+brew bundle --file="./workflows/go/Brewfile"
 
 # 2) Ensure GOPATH directories
 mkdir -p "$HOME/go/bin"

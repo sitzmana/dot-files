@@ -1,3 +1,9 @@
 [submodule ".dotbot"]
 	path = .dotbot
 	url = https://github.com/anishathalye/dotbot.git
+[submodule "dotbot-include"]
+	path = dotbot-include
+	url = https://gitlab.com/gnfzdz/dotbot-include.git
+[submodule "dotbot-includes"]
+	path = dotbot-includes
+	url = https://github.com/vanduc2514/dotbot-includes.git

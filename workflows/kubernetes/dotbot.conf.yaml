@@ -1,9 +1,17 @@
 # Kubernetes workflow Dotbot config
+- defaults:
+    link:
+      ignore-missing: true
+      relink: true
+      create: true
+      force: true
+    shell:
+      stdout: true
 
 - shell:
     # Bootstrap Kubernetes CLI tools
-    - [ bash, -lc, "$DOTFILES/workflows/kubernetes/install.sh" ]
+    - [ "./workflows/kubernetes/install.sh", "bash -lc" ]
 
 - link:
     # Link a base kubeconfig (edit with your clusters)
-    workflows/kubernetes/config: ~/.kube/config
+    ~/.kube/config: workflows/kubernetes/config

@@ -6,7 +6,7 @@ DOTFILES=${DOTFILES:-"$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"}
 if command -v brew &>/dev/null; then
   echo "Installing Kubernetes CLIs via Homebrew…"
   brew update
-  brew bundle --file="$DOTFILES/workflows/kubernetes/Brewfile"
+  brew bundle --file="./workflows/kubernetes/Brewfile"
 elif command -v apt &>/dev/null; then
   echo "Installing kubectl & kustomize via apt…"
   sudo apt update

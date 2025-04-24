@@ -1,8 +1,17 @@
 # GPG workflow Dotbot config
+- defaults:
+    link:
+      ignore-missing: true
+      relink: true
+      create: true
+      force: true
+    shell:
+      stdout: true
 
 - shell:
-    # Bootstrap GPG & Pinentry\    - [ bash, -lc, "$DOTFILES/workflows/gpg/install.sh" ]
+    # Bootstrap GPG & Pinentry\    
+    - [ "./workflows/gpg/install.sh", "bash -lc" ]
 
 - link:
-    workflows/gpg/gpg.conf:          ~/.gnupg/gpg.conf
-    workflows/gpg/gpg-agent.conf:    ~/.gnupg/gpg-agent.conf
+    ~/.gnupg/gpg.conf: workflows/gpg/gpg.conf
+    ~/.gnupg/gpg-agent.conf: workflows/gpg/gpg-agent.conf

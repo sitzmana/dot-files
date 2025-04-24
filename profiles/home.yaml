@@ -1,0 +1,10 @@
+# profiles/home.yaml
+
+# a more "developer sandbox" setup
+
+workflows:
+  - workflows/python/dotbot.conf.yaml
+  - workflows/rust/dotbot.conf.yaml
+  - workflows/go/dotbot.conf.yaml
+  - workflows/ssh/dotbot.conf.yaml
+  - workflows/gpg/dotbot.conf.yaml
