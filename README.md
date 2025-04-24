@@ -103,18 +103,30 @@ Examples of available workflows include:
 - SSH (`workflows/ssh/dotbot.conf.yaml`)
 - GPG (`workflows/gpg/dotbot.conf.yaml`)
 
-To enable a workflow, add its path under the `- include:` section of your top-level `install.conf.yaml`. For example:
+### Using Profiles
 
-```yaml
-- include:
-    workflows/python/dotbot.conf.yaml
-    workflows/rust/dotbot.conf.yaml
-    workflows/cloud/aws/dotbot.conf.yaml
-```
+Instead of manually editing `install.conf.yaml`, you can use **profiles**:
 
-Comment out or remove entries to disable specific workflows.
+Example profiles are provided as well as a default empty profile
+
+1. Create YAML files in the `profiles/` directory. Each file should list workflows under a `workflows:` key. For example, **profiles/home.yaml**:
+   ```yaml
+   workflows:
+     - workflows/python/dotbot.conf.yaml
+     - workflows/rust/dotbot.conf.yaml
+     - workflows/ssh/dotbot.conf.yaml
+   ```
+2. Run the installer:
+   ```bash
+   ./install.sh
+   ```
+   You’ll see an **fzf** menu to select one or more profiles by name.
+3. Select your desired profiles and press **Enter**. Dotbot will then apply your core config plus all workflows defined in those profiles.
+
+To disable a workflow, remove it from the profile’s `workflows:` list or simply don’t select that profile at install time.
 
 - **Modify** any file under its folder (e.g. `zsh/.zshrc`, `nvim/init.vim`).
 - **Re-run** `./install.sh` to update symlinks and re-apply setup commands.
 - **Add** new config files by updating `install.conf.yaml` and placing your dotfile in the repo.
 
+</file>
